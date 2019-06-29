@@ -23,6 +23,12 @@ public class ClienteService {
 		return obj.orElse(null);
 	}
 	
+	//BUSCAR POR NOME
+	public List<Cliente> buscaPorNome(String nome)
+	{
+		return repo.findDistinctByNomeContainingOrderByNome(nome);
+	}
+	
 	public Cliente update(Cliente obj) {
 		Cliente newObj = find(obj.getId());
 		updateData(newObj, obj);
