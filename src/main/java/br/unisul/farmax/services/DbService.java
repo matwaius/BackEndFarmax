@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import br.unisul.farmax.repositories.ClienteRepository;
 import br.unisul.farmax.repositories.ProdutoRepository;
+import br.unisul.farmax.repositories.VendaRepository;
 import br.unisul.farmax.domain.Produto;
 import br.unisul.farmax.domain.Cliente;
+import br.unisul.farmax.domain.Venda;
 
 @Service
 public class DbService {
@@ -19,6 +21,9 @@ public class DbService {
 	
 	@Autowired
 	private ProdutoRepository prodRep;
+	
+	@Autowired
+	private VendaRepository vendRep;
 	
 	public void inicializaBancoDeDados() throws ParseException {
 	
@@ -30,6 +35,10 @@ public class DbService {
 		Produto p3 = new Produto(null, "Produto 3", 30.00,300.00);
 		
 		prodRep.saveAll(Arrays.asList(p1,p2,p3));
+		
+		Venda v1 = new Venda(null, 1, 2, 10,(double) 100);
+		
+		vendRep.saveAll(Arrays.asList(v1));
 	}
 
 }

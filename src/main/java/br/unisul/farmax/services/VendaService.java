@@ -1,10 +1,12 @@
 package br.unisul.farmax.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.unisul.farmax.domain.Cliente;
 import br.unisul.farmax.domain.Venda;
 import br.unisul.farmax.repositories.VendaRepository;
 
@@ -18,6 +20,7 @@ public class VendaService {
 		Optional<Venda> obj = repo.findById(id);
 		return obj.orElse(null);
 	}
+	
 	
 	//INSERIR
 	public Venda insert(Venda obj) {
