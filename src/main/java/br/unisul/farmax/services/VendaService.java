@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.unisul.farmax.domain.Cliente;
 import br.unisul.farmax.domain.Venda;
 import br.unisul.farmax.repositories.VendaRepository;
 
